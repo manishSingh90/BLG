@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+</head>
+<p><strong>Profile </strong></p>
+<body>
+<% if current_user %>
+  <ul>
+    <li><%= current_user.first_name.capitalize %></li>
+    <li><%= current_user.last_name.capitalize %></li>
+    <li><%= current_user.email %></li>
+  </ul>
+<% end %>
+<%= link_to 'Edit', edit_user_path(@user) %>
+
+
+<%= yield %>
+</body>
+</html>
